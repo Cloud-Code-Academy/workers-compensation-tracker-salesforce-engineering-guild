@@ -1,0 +1,404 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP1"
+      },
+      "Name": "Marcus Johnson",
+      "Department__c": "Warehouse",
+      "Job_Title__c": "Warehouse Associate",
+      "Hire_Date__c": "2018-03-15"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP2"
+      },
+      "Name": "Sarah Chen",
+      "Department__c": "Manufacturing",
+      "Job_Title__c": "Machine Operator",
+      "Hire_Date__c": "2019-07-22"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP3"
+      },
+      "Name": "Darnell Williams",
+      "Department__c": "Maintenance",
+      "Job_Title__c": "Maintenance Technician",
+      "Hire_Date__c": "2017-11-08"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP4"
+      },
+      "Name": "Rosa Martinez",
+      "Department__c": "Warehouse",
+      "Job_Title__c": "Forklift Operator",
+      "Hire_Date__c": "2020-02-14"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP5"
+      },
+      "Name": "Kevin O'Brien",
+      "Department__c": "Warehouse",
+      "Job_Title__c": "Warehouse Lead",
+      "Hire_Date__c": "2016-09-30"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP6"
+      },
+      "Name": "Tanya Patel",
+      "Department__c": "Manufacturing",
+      "Job_Title__c": "Quality Inspector",
+      "Hire_Date__c": "2021-01-12"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP7"
+      },
+      "Name": "James Kowalski",
+      "Department__c": "Maintenance",
+      "Job_Title__c": "HVAC Technician",
+      "Hire_Date__c": "2015-06-01"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP8"
+      },
+      "Name": "Aisha Thompson",
+      "Department__c": "Operations",
+      "Job_Title__c": "Operations Coordinator",
+      "Hire_Date__c": "2019-04-20"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP9"
+      },
+      "Name": "Brian Foster",
+      "Department__c": "Warehouse",
+      "Job_Title__c": "Shipping Coordinator",
+      "Hire_Date__c": "2020-08-17"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP10"
+      },
+      "Name": "Carmen Rivera",
+      "Department__c": "Manufacturing",
+      "Job_Title__c": "Assembly Technician",
+      "Hire_Date__c": "2018-12-03"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP11"
+      },
+      "Name": "Derek Mason",
+      "Department__c": "Warehouse",
+      "Job_Title__c": "Receiving Clerk",
+      "Hire_Date__c": "2022-03-07"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP12"
+      },
+      "Name": "Emily Zhao",
+      "Department__c": "HR",
+      "Job_Title__c": "HR Generalist",
+      "Hire_Date__c": "2021-09-14"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP13"
+      },
+      "Name": "Frank Nguyen",
+      "Department__c": "IT",
+      "Job_Title__c": "Systems Administrator",
+      "Hire_Date__c": "2019-05-22"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP14"
+      },
+      "Name": "Gabrielle Scott",
+      "Department__c": "Sales",
+      "Job_Title__c": "Account Executive",
+      "Hire_Date__c": "2020-11-30"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP15"
+      },
+      "Name": "Henry Brooks",
+      "Department__c": "Finance",
+      "Job_Title__c": "Financial Analyst",
+      "Hire_Date__c": "2018-07-16"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP16"
+      },
+      "Name": "Irene Kim",
+      "Department__c": "Manufacturing",
+      "Job_Title__c": "CNC Operator",
+      "Hire_Date__c": "2022-01-25"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP17"
+      },
+      "Name": "Jason Pierce",
+      "Department__c": "Warehouse",
+      "Job_Title__c": "Inventory Specialist",
+      "Hire_Date__c": "2017-04-11"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP18"
+      },
+      "Name": "Kelly Morrison",
+      "Department__c": "Operations",
+      "Job_Title__c": "Operations Manager",
+      "Hire_Date__c": "2016-08-29"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP19"
+      },
+      "Name": "Luis Delgado",
+      "Department__c": "Maintenance",
+      "Job_Title__c": "Electrician",
+      "Hire_Date__c": "2020-06-15"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP20"
+      },
+      "Name": "Michelle Turner",
+      "Department__c": "HR",
+      "Job_Title__c": "HR Manager",
+      "Hire_Date__c": "2015-03-01"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP21"
+      },
+      "Name": "Nathan Cole",
+      "Department__c": "Warehouse",
+      "Job_Title__c": "Loader",
+      "Hire_Date__c": "2023-02-20"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP22"
+      },
+      "Name": "Olivia Harris",
+      "Department__c": "Finance",
+      "Job_Title__c": "Accountant",
+      "Hire_Date__c": "2021-07-08"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP23"
+      },
+      "Name": "Patrick Lee",
+      "Department__c": "IT",
+      "Job_Title__c": "Network Engineer",
+      "Hire_Date__c": "2019-10-14"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP24"
+      },
+      "Name": "Quinn Adams",
+      "Department__c": "Sales",
+      "Job_Title__c": "Sales Representative",
+      "Hire_Date__c": "2022-05-16"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP25"
+      },
+      "Name": "Rachel Green",
+      "Department__c": "Manufacturing",
+      "Job_Title__c": "Line Supervisor",
+      "Hire_Date__c": "2018-04-03"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP26"
+      },
+      "Name": "Samuel Wright",
+      "Department__c": "Maintenance",
+      "Job_Title__c": "Plumber",
+      "Hire_Date__c": "2020-09-22"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP27"
+      },
+      "Name": "Teresa Banks",
+      "Department__c": "Operations",
+      "Job_Title__c": "Logistics Coordinator",
+      "Hire_Date__c": "2021-03-18"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP28"
+      },
+      "Name": "Ulysses Carter",
+      "Department__c": "Warehouse",
+      "Job_Title__c": "Warehouse Associate",
+      "Hire_Date__c": "2023-06-05"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP29"
+      },
+      "Name": "Vanessa Powell",
+      "Department__c": "HR",
+      "Job_Title__c": "Recruiter",
+      "Hire_Date__c": "2022-08-11"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP30"
+      },
+      "Name": "Walter Evans",
+      "Department__c": "Finance",
+      "Job_Title__c": "Payroll Specialist",
+      "Hire_Date__c": "2019-02-27"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP31"
+      },
+      "Name": "Xena Russell",
+      "Department__c": "IT",
+      "Job_Title__c": "Help Desk Technician",
+      "Hire_Date__c": "2023-01-09"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP32"
+      },
+      "Name": "Yasmine Jenkins",
+      "Department__c": "Sales",
+      "Job_Title__c": "Sales Manager",
+      "Hire_Date__c": "2017-11-14"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP33"
+      },
+      "Name": "Zachary Reed",
+      "Department__c": "Manufacturing",
+      "Job_Title__c": "Welder",
+      "Hire_Date__c": "2020-07-30"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP34"
+      },
+      "Name": "Amber Price",
+      "Department__c": "Maintenance",
+      "Job_Title__c": "Maintenance Supervisor",
+      "Hire_Date__c": "2016-05-23"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP35"
+      },
+      "Name": "Brandon Cox",
+      "Department__c": "Warehouse",
+      "Job_Title__c": "Forklift Operator",
+      "Hire_Date__c": "2021-12-07"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP36"
+      },
+      "Name": "Cassandra Bell",
+      "Department__c": "Operations",
+      "Job_Title__c": "Safety Officer",
+      "Hire_Date__c": "2018-09-19"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP37"
+      },
+      "Name": "Dillon Murphy",
+      "Department__c": "Warehouse",
+      "Job_Title__c": "Picker/Packer",
+      "Hire_Date__c": "2022-04-14"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP38"
+      },
+      "Name": "Eleanor Hayes",
+      "Department__c": "Manufacturing",
+      "Job_Title__c": "Process Engineer",
+      "Hire_Date__c": "2019-08-06"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP39"
+      },
+      "Name": "Fabio Santos",
+      "Department__c": "Maintenance",
+      "Job_Title__c": "Grounds Maintenance",
+      "Hire_Date__c": "2023-03-28"
+    },
+    {
+      "attributes": {
+        "type": "Employee__c",
+        "referenceId": "EMP40"
+      },
+      "Name": "Grace Hoffman",
+      "Department__c": "Sales",
+      "Job_Title__c": "Inside Sales Representative",
+      "Hire_Date__c": "2020-10-01"
+    }
+  ]
+}
