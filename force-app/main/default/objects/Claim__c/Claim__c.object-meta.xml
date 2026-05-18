@@ -155,10 +155,9 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Claim</label>
     <nameField>
-        <displayFormat>WC-{000000000}</displayFormat>
-        <label>Claim Number</label>
+        <label>Claim Name</label>
         <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
+        <type>Text</type>
     </nameField>
     <pluralLabel>Claims</pluralLabel>
     <searchLayouts></searchLayouts>
