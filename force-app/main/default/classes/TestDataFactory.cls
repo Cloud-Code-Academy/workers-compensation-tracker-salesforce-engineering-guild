@@ -19,8 +19,9 @@
  *
  * See the Apex Language Reference for more information about Testing and Code Coverage.
  */
-@isTest
-private class TestDataFactory {
+
+
+public class TestDataFactory {
     
         /*
          * =========================================================
@@ -67,39 +68,47 @@ private class TestDataFactory {
             return emps;
         }
     
+        public static Employee__c createEmployeeWithoutName() {
+            return new Employee__c();
+        }
+        
         /*
          * =========================================================
          * CLAIM METHODS
          * =========================================================
          */
     
-        public static Claim__c createClaim() {
-            // Creates default open claim
-            Claim__c claim = new Claim__c(Status__c = 'Open', Payout_Amount__c = 1000);
-            return claim;
-        }
-    
+         public static Claim__c createClaim(
+            String status,
+            Decimal amount
+        ) {
+            return new Claim__c(
+                Status__c = status,
+                Settlement_Amount__c = amount
+            );
+        }    
+
         public static Claim__c createSettledClaim() {
             // Creates settled claim with payout and settlement date
-            Claim__c claim = new Claim__c(Status__c = 'Settled', Payout_Amount__c = 5000, Settlement_Date__c = Date.today());
+            Claim__c claim = new Claim__c(Status__c = 'Settled', Settlement_Amount__c = 5000, Settlement_Date__c = Date.today());
             return claim;
         }
     
         public static Claim__c createHighValueClaim() {
             // Creates claim above high-value threshold
-            Claim__c claim = new Claim__c(Status__c = 'Open', Payout_Amount__c = 10000);
+            Claim__c claim = new Claim__c(Status__c = 'Open', Settlement_Amount__c = 10000);
             return claim;
         }
     
         public static Claim__c createMediumRiskClaim() {
             // Creates moderate payout claim for scoring tests
-            Claim__c claim = new Claim__c(Status__c = 'Open', Payout_Amount__c = 3000);
+            Claim__c claim = new Claim__c(Status__c = 'Open', Settlement_Amount__c = 3000);
             return claim;
         }
     
         public static Claim__c createLowRiskClaim() {
             // Creates small payout claim
-            Claim__c claim = new Claim__c(Status__c = 'Open', Payout_Amount__c = 500);
+            Claim__c claim = new Claim__c(Status__c = 'Open', Settlement_Amount__c = 500);
             return claim;
         }
     
@@ -107,17 +116,36 @@ private class TestDataFactory {
             // Bulk claim creation helper
             List<Claim__c> claims = new List<Claim__c>();
             for (Integer i = 0; i < count; i++) {
-                claims.add(new Claim__c(Status__c = 'Open', Payout_Amount__c = 1000));
+                claims.add(new Claim__c(Status__c = 'Open', Settlement_Amount__c = 1000));
             }
             return claims;
         }
-    
+
+        public static Claim__c createInvalidClaim() {
+            return new Claim__c();
+        }
+
         /*
          * =========================================================
          * JUNCTION OBJECT METHODS
          * =========================================================
          */
-    
+
+         public static Employee__c createEmployeeWithClaim(            
+            String status,
+            Decimal amount
+     )  {
+            Employee__c emp = createEmployee();
+            insert emp;
+        
+            Claim__c claim = createClaim(status, amount);
+            insert claim;
+        
+            insert createEmployeeClaim(emp.Id, claim.Id);
+        
+            return emp;
+        }
+
         public static Employee_Claim__c createEmployeeClaim(
             Id employeeId,
             Id claimId
@@ -147,7 +175,7 @@ private class TestDataFactory {
         public static Employee__c createEmployeeWithMultipleClaims(
             Integer claimCount,
             Decimal payoutAmount
-        ) {
+        )   {
             // Creates employee with configurable risk profile
             Employee__c emp = createEmployee();
             List<Claim__c> claims = new List<Claim__c>();
@@ -155,10 +183,16 @@ private class TestDataFactory {
                 claims.add(new Claim__c(Status__c = 'Open', Payout_Amount__c = payoutAmount));
             }
             insert emp;
+            List<Employee_Claim__c> junctions = new List<Employee_Claim__c>();
+
             for (Claim__c c : claims) {
-                c.Employee__c = emp.Id;
-                }
-            insert claims;
+            junctions.add(
+                new Employee_Claim__c(
+                Employee__c = emp.Id,
+                Claim__c = c.Id
+                )
+            );
+        }
         }
     
         public static Employee__c createHighRiskScenario() {
@@ -226,12 +260,12 @@ private class TestDataFactory {
     
         public static List<Claim__c> createBulkClaims(
             Integer count,
-            Decimal payoutAmount
+            Decimal settleAmount
         ) {
             // Creates large claim dataset for governor testing
             List<Claim__c> claims = new List<Claim__c>();
             for (Integer i = 0; i < count; i++) {
-                claims.add(new Claim__c(Status__c = 'Open', Payout_Amount__c = payoutAmount));
+                claims.add(new Claim__c(Status__c = 'Open', Settlement_Amount__c = settleAmount));
             }
             return claims;
         }
