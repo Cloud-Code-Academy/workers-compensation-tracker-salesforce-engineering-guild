@@ -20,7 +20,7 @@
  * See the Apex Language Reference for more information about Testing and Code Coverage.
  */
 
-
+@isTest
 public class TestDataFactory {
     
         /*
@@ -71,7 +71,7 @@ public class TestDataFactory {
         public static Employee__c createEmployeeWithoutName() {
             return new Employee__c();
         }
-        
+
         /*
          * =========================================================
          * CLAIM METHODS
@@ -171,30 +171,41 @@ public class TestDataFactory {
          * RISK SCENARIO HELPERS
          * =========================================================
          */
-    /*
-        public static Employee__c createEmployeeWithMultipleClaims(
+    
+         public static Employee__c createEmployeeWithMultipleClaims(
             Integer claimCount,
             Decimal payoutAmount
-        )   {
-            // Creates employee with configurable risk profile
+        ) {
             Employee__c emp = createEmployee();
-            List<Claim__c> claims = new List<Claim__c>();
-            for (Integer i = 0; i < claimCount; i++) {
-                claims.add(new Claim__c(Status__c = 'Open', Payout_Amount__c = payoutAmount));
-            }
             insert emp;
+        
+            List<Claim__c> claims = new List<Claim__c>();
+        
+            for (Integer i = 0; i < claimCount; i++) {
+                claims.add(
+                    new Claim__c(
+                        Status__c = 'Open',
+                        Settlement_Amount__c = payoutAmount
+                    )
+                );
+            }
+        
+            insert claims;
+        
             List<Employee_Claim__c> junctions = new List<Employee_Claim__c>();
-
+        
             for (Claim__c c : claims) {
-            junctions.add(
-                new Employee_Claim__c(
-                Employee__c = emp.Id,
-                Claim__c = c.Id
-                )
-            );
+                junctions.add(
+                    new Employee_Claim__c(
+                        Employee__c = emp.Id,
+                        Claim__c = c.Id
+                    )
+                );
+            }        
+            insert junctions;        
+            return emp;
         }
-        }
-    
+
         public static Employee__c createHighRiskScenario() {
             // Creates employee + multiple large claims
             return createEmployeeWithMultipleClaims(5, 10000);
@@ -209,7 +220,7 @@ public class TestDataFactory {
             // Creates employee + minimal claim activity
             return createEmployeeWithMultipleClaims(1, 500);
         }
-    */
+    
         /*
          * =========================================================
          * CLAIM STATUS SCENARIO HELPERS
@@ -218,17 +229,17 @@ public class TestDataFactory {
     
         public static Claim__c createOpenClaim() {
             // Creates claim in Open status
-            return new Claim__c(Status__c = 'Open', Payout_Amount__c = 1000);
+            return new Claim__c(Status__c = 'Open', Settlement_Amount__c = 1000);
         }
     
         public static Claim__c createUnderReviewClaim() {
             // Creates claim in Under Review status
-            return new Claim__c(Status__c = 'Under Review', Payout_Amount__c = 1000);
+            return new Claim__c(Status__c = 'Under Review', Settlement_Amount__c = 1000);
         }
     
         public static Claim__c createRejectedClaim() {
             // Creates rejected claim
-            return new Claim__c(Status__c = 'Rejected', Payout_Amount__c = 0);
+            return new Claim__c(Status__c = 'Rejected', Settlement_Amount__c = 0);
         }
     
         /*
