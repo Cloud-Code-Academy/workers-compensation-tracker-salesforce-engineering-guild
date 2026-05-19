@@ -19,7 +19,7 @@
  *
  * See the Apex Language Reference for more information about Testing and Code Coverage.
  */
-@isTest
+@IsTest
 private class EmployeeClaimsSummaryTest {
 
     /*
@@ -40,7 +40,7 @@ private class EmployeeClaimsSummaryTest {
      * =========================================================
      */
 
-    @isTest
+     @IsTest
     static void testInsertEmployeeClaimRollup() {
 
         Employee__c emp = [
@@ -88,7 +88,7 @@ private class EmployeeClaimsSummaryTest {
      * =========================================================
      */
 
-    @isTest
+    @IsTest
     static void testUpdateClaimAmountRollup() {
 
         Employee__c emp = [
@@ -136,7 +136,7 @@ private class EmployeeClaimsSummaryTest {
      * =========================================================
      */
 
-    @isTest
+     @IsTest
     static void testDeleteEmployeeClaimRollup() {
 
         Employee__c emp = [
@@ -182,7 +182,7 @@ private class EmployeeClaimsSummaryTest {
      * =========================================================
      */
 
-    @isTest
+     @IsTest
     static void testBulkInsertRollup() {
 
         Employee__c emp = [
