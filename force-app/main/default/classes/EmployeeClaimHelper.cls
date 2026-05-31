@@ -7,7 +7,27 @@ public with sharing class EmployeeClaimHelper extends TriggerHandler{
     public EmployeeClaimHelper() {
         this.newRecords    = (List<Employee_Claim__c>) newRecords;
         this.newRecordsMap = (Map<Id,Employee_Claim__c>) newRecordsMap;
-        this.oldRecods     = (List<Employee_Claim__c>) oldRecods;
-        this.oldRecordsMap = (Map<Id,Employee_Claim__c>) oldRecordsMap;
+        //safe operator to test for prior records to prevent null exception error
+        this.oldRecods     = (oldRecods != null) ? (List<Employee_Claim__c>) oldRecods : null;
+        this.oldRecordsMap = (oldRecordsMap != null) ? (Map<Id,Employee_Claim__c>) oldRecordsMap : null;
     }
+    public override void afterInsert(){
+        this.executeAfterLogic();
+    }
+
+    public override void afterUpdate(){
+        this.executeAfterLogic();
+    }
+
+    public override void afterDelete(){
+        this.executeAfterLogic();
+    }
+
+    public override void afterUndelete(){
+        this.executeAfterLogic();
+    }
+
+    private void executeAfterLogic(){
+        System.debug('execute after logic is running');
+    } 
 }
