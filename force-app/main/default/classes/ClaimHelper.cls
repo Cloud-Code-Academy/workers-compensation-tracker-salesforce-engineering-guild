@@ -19,6 +19,23 @@ public with sharing class ClaimHelper extends TriggerHandler{
 
     private void executeBeforeLogic(){
         for (Claim__c claim : newRecords){
+            //Calculate Claim Duration: Days_Open__c 
+            if(claim.Incident_Date__c != null && 
+                claim.Status__c != 'Settled' && 
+                claim.Settlement_Date__c == null){
+                claim.Days_Open__c = claim.Incident_Date__c.daysBetween(Date.today());
+            }else  
+            if (claim.Status__c == 'Settled' &&
+                claim.Settlement_Date__c != null){
+                claim.Days_Open__c = claim.Incident_Date__c.daysBetween(claim.Settlement_Date__c);
+            } 
+            //SCRUM-7: Intake Validation
+            if (claim.Incident_Date__c != null &&
+                claim.Settlement_Date__c != null && 
+                claim.Incident_Date__c > claim.Settlement_Date__c){
+                claim.Settlement_Date__c.addError('Settlement Date cannot be before the Incident Date.');
+            }
+
             //SCRUM-7: Intake Validation moved into framework
             if(claim.Incident_Date__c != null && claim.Incident_Date__c > Date.today()){
                 claim.Incident_Date__c.addError('Incident Date cannot be in the future.');
