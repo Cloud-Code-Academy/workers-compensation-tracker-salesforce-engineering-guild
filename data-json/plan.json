@@ -1,0 +1,32 @@
+[
+  {
+    "sobject": "Account",
+    "saveRefs": true,
+    "resolveRefs": false,
+    "files": ["Account.json"]
+  },
+  {
+    "sobject": "Contact",
+    "saveRefs": true,
+    "resolveRefs": true,
+    "files": ["Contact.json"]
+  },
+  {
+    "sobject": "Employee__c",
+    "saveRefs": true,
+    "resolveRefs": false,
+    "files": ["Employee__c.json"]
+  },
+  {
+    "sobject": "Claim__c",
+    "saveRefs": true,
+    "resolveRefs": false,
+    "files": ["Claim__c.json"]
+  },
+  {
+    "sobject": "Employee_Claim__c",
+    "saveRefs": false,
+    "resolveRefs": true,
+    "files": ["Employee_Claim__c.json"]
+  }
+]

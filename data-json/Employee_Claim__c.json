@@ -1,0 +1,628 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC1"
+      },
+      "Employee__c": "@EMP1",
+      "Claim__c": "@CLM1"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC2"
+      },
+      "Employee__c": "@EMP1",
+      "Claim__c": "@CLM2"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC3"
+      },
+      "Employee__c": "@EMP1",
+      "Claim__c": "@CLM3"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC4"
+      },
+      "Employee__c": "@EMP1",
+      "Claim__c": "@CLM26"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC5"
+      },
+      "Employee__c": "@EMP1",
+      "Claim__c": "@CLM27"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC6"
+      },
+      "Employee__c": "@EMP1",
+      "Claim__c": "@CLM53"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC7"
+      },
+      "Employee__c": "@EMP1",
+      "Claim__c": "@CLM54"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC8"
+      },
+      "Employee__c": "@EMP2",
+      "Claim__c": "@CLM4"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC9"
+      },
+      "Employee__c": "@EMP2",
+      "Claim__c": "@CLM5"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC10"
+      },
+      "Employee__c": "@EMP2",
+      "Claim__c": "@CLM28"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC11"
+      },
+      "Employee__c": "@EMP2",
+      "Claim__c": "@CLM51"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC12"
+      },
+      "Employee__c": "@EMP2",
+      "Claim__c": "@CLM52"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC13"
+      },
+      "Employee__c": "@EMP3",
+      "Claim__c": "@CLM6"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC14"
+      },
+      "Employee__c": "@EMP3",
+      "Claim__c": "@CLM7"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC15"
+      },
+      "Employee__c": "@EMP3",
+      "Claim__c": "@CLM8"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC16"
+      },
+      "Employee__c": "@EMP3",
+      "Claim__c": "@CLM29"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC17"
+      },
+      "Employee__c": "@EMP3",
+      "Claim__c": "@CLM30"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC18"
+      },
+      "Employee__c": "@EMP3",
+      "Claim__c": "@CLM55"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC19"
+      },
+      "Employee__c": "@EMP3",
+      "Claim__c": "@CLM56"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC20"
+      },
+      "Employee__c": "@EMP4",
+      "Claim__c": "@CLM9"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC21"
+      },
+      "Employee__c": "@EMP4",
+      "Claim__c": "@CLM31"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC22"
+      },
+      "Employee__c": "@EMP4",
+      "Claim__c": "@CLM32"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC23"
+      },
+      "Employee__c": "@EMP4",
+      "Claim__c": "@CLM57"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC24"
+      },
+      "Employee__c": "@EMP4",
+      "Claim__c": "@CLM58"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC25"
+      },
+      "Employee__c": "@EMP5",
+      "Claim__c": "@CLM33"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC26"
+      },
+      "Employee__c": "@EMP5",
+      "Claim__c": "@CLM34"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC27"
+      },
+      "Employee__c": "@EMP5",
+      "Claim__c": "@CLM59"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC28"
+      },
+      "Employee__c": "@EMP6",
+      "Claim__c": "@CLM35"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC29"
+      },
+      "Employee__c": "@EMP6",
+      "Claim__c": "@CLM36"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC30"
+      },
+      "Employee__c": "@EMP6",
+      "Claim__c": "@CLM60"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC31"
+      },
+      "Employee__c": "@EMP6",
+      "Claim__c": "@CLM61"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC32"
+      },
+      "Employee__c": "@EMP7",
+      "Claim__c": "@CLM10"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC33"
+      },
+      "Employee__c": "@EMP7",
+      "Claim__c": "@CLM37"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC34"
+      },
+      "Employee__c": "@EMP7",
+      "Claim__c": "@CLM62"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC35"
+      },
+      "Employee__c": "@EMP8",
+      "Claim__c": "@CLM38"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC36"
+      },
+      "Employee__c": "@EMP8",
+      "Claim__c": "@CLM39"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC37"
+      },
+      "Employee__c": "@EMP8",
+      "Claim__c": "@CLM63"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC38"
+      },
+      "Employee__c": "@EMP9",
+      "Claim__c": "@CLM8"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC39"
+      },
+      "Employee__c": "@EMP35",
+      "Claim__c": "@CLM33"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC40"
+      },
+      "Employee__c": "@EMP16",
+      "Claim__c": "@CLM61"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC41"
+      },
+      "Employee__c": "@EMP10",
+      "Claim__c": "@CLM13"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC42"
+      },
+      "Employee__c": "@EMP10",
+      "Claim__c": "@CLM20"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC43"
+      },
+      "Employee__c": "@EMP17",
+      "Claim__c": "@CLM12"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC44"
+      },
+      "Employee__c": "@EMP17",
+      "Claim__c": "@CLM71"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC45"
+      },
+      "Employee__c": "@EMP18",
+      "Claim__c": "@CLM14"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC46"
+      },
+      "Employee__c": "@EMP18",
+      "Claim__c": "@CLM19"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC47"
+      },
+      "Employee__c": "@EMP26",
+      "Claim__c": "@CLM21"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC48"
+      },
+      "Employee__c": "@EMP26",
+      "Claim__c": "@CLM69"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC49"
+      },
+      "Employee__c": "@EMP15",
+      "Claim__c": "@CLM11"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC50"
+      },
+      "Employee__c": "@EMP37",
+      "Claim__c": "@CLM16"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC51"
+      },
+      "Employee__c": "@EMP37",
+      "Claim__c": "@CLM17"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC52"
+      },
+      "Employee__c": "@EMP38",
+      "Claim__c": "@CLM15"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC53"
+      },
+      "Employee__c": "@EMP27",
+      "Claim__c": "@CLM22"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC54"
+      },
+      "Employee__c": "@EMP40",
+      "Claim__c": "@CLM25"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC55"
+      },
+      "Employee__c": "@EMP29",
+      "Claim__c": "@CLM18"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC56"
+      },
+      "Employee__c": "@EMP32",
+      "Claim__c": "@CLM23"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC57"
+      },
+      "Employee__c": "@EMP33",
+      "Claim__c": "@CLM24"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC58"
+      },
+      "Employee__c": "@EMP36",
+      "Claim__c": "@CLM40"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC59"
+      },
+      "Employee__c": "@EMP36",
+      "Claim__c": "@CLM50"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC60"
+      },
+      "Employee__c": "@EMP33",
+      "Claim__c": "@CLM41"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC61"
+      },
+      "Employee__c": "@EMP19",
+      "Claim__c": "@CLM42"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC62"
+      },
+      "Employee__c": "@EMP19",
+      "Claim__c": "@CLM72"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC63"
+      },
+      "Employee__c": "@EMP25",
+      "Claim__c": "@CLM43"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC64"
+      },
+      "Employee__c": "@EMP14",
+      "Claim__c": "@CLM44"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC65"
+      },
+      "Employee__c": "@EMP14",
+      "Claim__c": "@CLM65"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC66"
+      },
+      "Employee__c": "@EMP11",
+      "Claim__c": "@CLM45"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC67"
+      },
+      "Employee__c": "@EMP11",
+      "Claim__c": "@CLM66"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC68"
+      },
+      "Employee__c": "@EMP34",
+      "Claim__c": "@CLM47"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC69"
+      },
+      "Employee__c": "@EMP39",
+      "Claim__c": "@CLM48"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC70"
+      },
+      "Employee__c": "@EMP24",
+      "Claim__c": "@CLM49"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC71"
+      },
+      "Employee__c": "@EMP21",
+      "Claim__c": "@CLM46"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC72"
+      },
+      "Employee__c": "@EMP21",
+      "Claim__c": "@CLM74"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC73"
+      },
+      "Employee__c": "@EMP22",
+      "Claim__c": "@CLM64"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC74"
+      },
+      "Employee__c": "@EMP30",
+      "Claim__c": "@CLM70"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC75"
+      },
+      "Employee__c": "@EMP28",
+      "Claim__c": "@CLM67"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC76"
+      },
+      "Employee__c": "@EMP9",
+      "Claim__c": "@CLM68"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC77"
+      },
+      "Employee__c": "@EMP23",
+      "Claim__c": "@CLM75"
+    },
+    {
+      "attributes": {
+        "type": "Employee_Claim__c",
+        "referenceId": "EC78"
+      },
+      "Employee__c": "@EMP24",
+      "Claim__c": "@CLM73"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "attributes": {
+      "type": "Claim__c",
+      "referenceId": "CLM001"
+    },
+    "Name": "WC-2022-001",
+    "Incident_Date__c": "2022-01-12",
+    "Date_Filed__c": "2022-01-15",
+    "Status__c": "Settled",
+    "Settlement_Amount__c": 5200.0,
+    "Injury_Type__c": "Slip and Fall"
+  }
+]

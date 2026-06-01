@@ -1,0 +1,44 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "ACC1"
+      },
+      "Name": "Liberty Mutual Insurance",
+      "Phone": "(617) 357-9500"
+    },
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "ACC2"
+      },
+      "Name": "MetLife",
+      "Phone": "(212) 578-2211"
+    },
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "ACC3"
+      },
+      "Name": "Travelers Insurance",
+      "Phone": "(860) 277-0111"
+    },
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "ACC4"
+      },
+      "Name": "Zurich Insurance Group",
+      "Phone": "(847) 605-6000"
+    },
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "ACC5"
+      },
+      "Name": "Chubb Limited",
+      "Phone": "(215) 640-1000"
+    }
+  ]
+}

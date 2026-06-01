@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employee_Compact</fullName>
+    <fields>Name</fields>
+    <fields>Employee_ID__c</fields>
+    <fields>Risk_Level__c</fields>
+    <fields>Total_Claims__c</fields>
+    <fields>Total_Payout__c</fields>
+    <label>Employee Compact</label>
+</CompactLayout>

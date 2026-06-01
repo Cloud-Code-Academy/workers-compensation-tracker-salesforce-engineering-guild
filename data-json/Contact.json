@@ -1,0 +1,104 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "CON1"
+      },
+      "FirstName": "Jennifer",
+      "LastName": "Walsh",
+      "Email": "j.walsh@libertymutual.com",
+      "AccountId": "@ACC1"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "CON2"
+      },
+      "FirstName": "Robert",
+      "LastName": "Fanning",
+      "Email": "r.fanning@libertymutual.com",
+      "AccountId": "@ACC1"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "CON3"
+      },
+      "FirstName": "Diana",
+      "LastName": "Park",
+      "Email": "d.park@metlife.com",
+      "AccountId": "@ACC2"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "CON4"
+      },
+      "FirstName": "Thomas",
+      "LastName": "Guerrero",
+      "Email": "t.guerrero@metlife.com",
+      "AccountId": "@ACC2"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "CON5"
+      },
+      "FirstName": "Patricia",
+      "LastName": "Novak",
+      "Email": "p.novak@travelers.com",
+      "AccountId": "@ACC3"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "CON6"
+      },
+      "FirstName": "Kevin",
+      "LastName": "Abrams",
+      "Email": "k.abrams@travelers.com",
+      "AccountId": "@ACC3"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "CON7"
+      },
+      "FirstName": "Sandra",
+      "LastName": "Erikson",
+      "Email": "s.erikson@zurich.com",
+      "AccountId": "@ACC4"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "CON8"
+      },
+      "FirstName": "Michael",
+      "LastName": "Torres",
+      "Email": "m.torres@zurich.com",
+      "AccountId": "@ACC4"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "CON9"
+      },
+      "FirstName": "Laura",
+      "LastName": "Whitfield",
+      "Email": "l.whitfield@chubb.com",
+      "AccountId": "@ACC5"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "CON10"
+      },
+      "FirstName": "David",
+      "LastName": "Okafor",
+      "Email": "d.okafor@chubb.com",
+      "AccountId": "@ACC5"
+    }
+  ]
+}
