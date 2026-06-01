@@ -1,15 +1,15 @@
 public with sharing class EmployeeClaimHelper extends TriggerHandler{
     private List<Employee_Claim__c>    newRecords = new List<Employee_Claim__c>();
     private Map<id, Employee_Claim__c> newRecordsMap = new Map<Id,Employee_Claim__c>();
-    private List<Employee_Claim__c>    oldRecods = new List<Employee_Claim__c>();
+    private List<Employee_Claim__c>    oldRecords = new List<Employee_Claim__c>();
     private Map<Id, Employee_Claim__c> oldRecordsMap = new Map<Id,Employee_Claim__c>();
 
     public EmployeeClaimHelper() {
-        this.newRecords    = (List<Employee_Claim__c>) newRecords;
-        this.newRecordsMap = (Map<Id,Employee_Claim__c>) newRecordsMap;
+        this.newRecords    = (List<Employee_Claim__c>) Trigger.new;
+        this.newRecordsMap = (Map<Id,Employee_Claim__c>) Trigger.newMap;
         //safe operator to test for prior records to prevent null exception error
-        this.oldRecods     = (oldRecods != null) ? (List<Employee_Claim__c>) oldRecods : null;
-        this.oldRecordsMap = (oldRecordsMap != null) ? (Map<Id,Employee_Claim__c>) oldRecordsMap : null;
+        this.oldRecords     = (Trigger.old != null) ? (List<Employee_Claim__c>) Trigger.old : null;
+        this.oldRecordsMap = (Trigger.oldMap != null) ? (Map<Id,Employee_Claim__c>) Trigger.oldMap : null;
     }
     public override void beforeInsert(){
         this.preventDuplicateEmployeeClaims(this.newRecords);
@@ -35,7 +35,7 @@ public with sharing class EmployeeClaimHelper extends TriggerHandler{
         Set<Id> employeeIds = new Set<Id>();
 
         //Gather all relevant Employee Ids accross trigger insert/update/delete/undelete states
-        List<Employee_Claim__c> sourceRecords = (Trigger.isDelete) ? this.oldRecods : this.newRecords;
+        List<Employee_Claim__c> sourceRecords = (Trigger.isDelete) ? this.oldRecords : this.newRecords;
 
         if(sourceRecords != null){
             for(Employee_Claim__c ec : sourceRecords){
@@ -58,16 +58,16 @@ public with sharing class EmployeeClaimHelper extends TriggerHandler{
 
     private void preventDuplicateEmployeeClaims(List<Employee_Claim__c> recordsToCheck){
         //Prevent an Employee from being assigned to the same Claim twice (SCRUM-11 Data Recovery Logic)
-        Set<Id> claimsIds = new Set<Id>();
+        Set<Id> claimIds = new Set<Id>();
         Set<Id> employeeIds = new Set<Id>();
 
         for (Employee_Claim__c ec : recordsToCheck) {
-            If (ec.Claim__c != null && ec.Employee__c != null){
-                claimsIds.add(ec.Claim__c);
+            if (ec.Claim__c != null && ec.Employee__c != null){
+                claimIds.add(ec.Claim__c);
                 employeeIds.add(ec.Employee__c);
             }
         }
-        if (claimsIds.isEmpty()  || employeeIds.isEmpty()) {
+        if (claimIds.isEmpty()  || employeeIds.isEmpty()) {
             return;
         }
         //Query existing junction assignments to match parameters
@@ -75,7 +75,7 @@ public with sharing class EmployeeClaimHelper extends TriggerHandler{
         for (Employee_Claim__c existing : [
             SELECT Employee__c, Claim__c
             FROM Employee_Claim__c
-            WHERE Claim__c in : claimsIds AND Employee__c IN :employeeIds
+            WHERE Claim__c IN :claimIds AND Employee__c IN :employeeIds
             WITH USER_MODE
             ]){
             existingPairs.add(String.valueOf(existing.Employee__c) + String.valueOf(existing.Claim__c));
@@ -124,7 +124,7 @@ public with sharing class EmployeeClaimHelper extends TriggerHandler{
                 if(ec.Claim__c != null){
                     Decimal payout = ec.Claim__r.Settlement_Amount__c != null ? ec.Claim__r.Settlement_Amount__c : 0.0;
                     //Increment overall settled payouts
-                    If (ec.Claim__r.Status__c == 'Settled'){
+                    if (ec.Claim__r.Status__c == 'Settled'){
                         totalPayout += payout;
                     }
                     //Group claims data by Insurance Provider using AccountId
@@ -133,7 +133,7 @@ public with sharing class EmployeeClaimHelper extends TriggerHandler{
                         Integer currentCount = claimsPerProviderMap.containsKey(providerId) ? claimsPerProviderMap.get(providerId) : 0;
                         claimsPerProviderMap.put(providerId, currentCount + 1);
                     }
-                    IF (payout > 10000.0){
+                    if (payout > 10000.0){
                         isHighRisk = true;
                     }
                 }
@@ -153,7 +153,7 @@ public with sharing class EmployeeClaimHelper extends TriggerHandler{
         }
         //final check and commit
         if(!employeesToUpdate.isEmpty()){
-            Database.update(employeesToUpdate, AccessLevel.SYSTEM_MODE);
+            Database.update(employeesToUpdate,true);
         }
     }
 }
