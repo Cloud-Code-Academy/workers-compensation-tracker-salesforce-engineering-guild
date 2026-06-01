@@ -82,7 +82,7 @@
  * - Open claims
  * - Settled claims
  * - Under review claims
- * - Rejected claims
+ * - Denied claims
  * - High-value claims
  * - Null payout claims
  * - Invalid date scenarios
@@ -503,12 +503,12 @@ public class TestDataFactory {
     
         public static Claim__c createUnderReviewClaim() {
             // Creates claim in Under Review status
-            return new Claim__c(Status__c = 'Under Review', Settlement_Amount__c = 1000);
+            return new Claim__c(Status__c = 'In Review', Settlement_Amount__c = 1000);
         }
     
         public static Claim__c createRejectedClaim() {
-            // Creates rejected claim
-            return new Claim__c(Status__c = 'Rejected', Settlement_Amount__c = 0);
+            // Creates Denied claim
+            return new Claim__c(Status__c = 'Denied', Settlement_Amount__c = 0);
         }
     
         /*

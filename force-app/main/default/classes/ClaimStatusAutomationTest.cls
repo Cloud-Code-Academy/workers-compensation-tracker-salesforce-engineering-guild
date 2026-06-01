@@ -27,7 +27,7 @@
  *
  *     Open
  *         ↓
- *     Under Review
+ *     In Review
  *         ↓
  *     Settled / Rejected
  *
@@ -51,7 +51,7 @@
  * - Settlement_Amount__c is required
  * - settlement values persist correctly
  *
- * UNDER REVIEW RULES
+ * In Review RULES
  * - no settlement date should populate
  *
  * REJECTED CLAIM RULES
@@ -67,7 +67,7 @@
  *
  * This class validates:
  *
- * ✔ Open → Under Review transitions
+ * ✔ Open → In Review transitions
  * ✔ Settlement date auto-population
  * ✔ Settlement amount validation
  * ✔ Invalid settlement transitions
@@ -204,7 +204,7 @@ private class ClaimStatusAutomationTest {
             LIMIT 1
         ];
 
-        claim.Status__c = 'Under Review';
+        claim.Status__c = 'In Review';
 
         Test.startTest();
         update claim;
@@ -217,9 +217,9 @@ private class ClaimStatusAutomationTest {
         ];
 
         System.assertEquals(
-            'Under Review',
+            'In Review',
             updatedClaim.Status__c,
-            'Claim should transition from Open to Under Review'
+            'Claim should transition from Open to In Review'
         );
     }
 
@@ -372,7 +372,7 @@ private class ClaimStatusAutomationTest {
         Date originalSettlementDate =
             claim.Settlement_Date__c;
 
-        claim.Status__c = 'Under Review';
+        claim.Status__c = 'In Review';
 
         Test.startTest();
         update claim;
@@ -387,9 +387,9 @@ private class ClaimStatusAutomationTest {
         ];
 
         System.assertEquals(
-            'Under Review',
+            'In Review',
             updatedClaim.Status__c,
-            'Claim should move back to Under Review'
+            'Claim should move back to In Review'
         );
 
         System.assertEquals(
@@ -456,7 +456,7 @@ private class ClaimStatusAutomationTest {
 
     /*
      * =========================================================
-     * UNDER REVIEW VALIDATION TESTS
+     * In Review VALIDATION TESTS
      * =========================================================
      */
 
@@ -468,7 +468,7 @@ private class ClaimStatusAutomationTest {
 
         insert claim;
 
-        claim.Status__c = 'Under Review';
+        claim.Status__c = 'In Review';
 
         Test.startTest();
         update claim;
@@ -483,9 +483,9 @@ private class ClaimStatusAutomationTest {
         ];
 
         System.assertEquals(
-            'Under Review',
+            'In Review',
             updatedClaim.Status__c,
-            'Claim should transition to Under Review'
+            'Claim should transition to In Review'
         );
 
         System.assertEquals(

@@ -28,7 +28,7 @@
  *
  *     Open
  *         ↓
- *     Under Review
+ *     In Review
  *         ↓
  *     Settled / Rejected
  *
@@ -47,8 +47,8 @@
  *
  * This test suite validates:
  *
- * ✔ Open → Under Review transitions
- * ✔ Under Review → Settled transitions
+ * ✔ Open → In Review transitions
+ * ✔ In Review → Settled transitions
  * ✔ Settlement amount updates
  * ✔ Settlement date population
  * ✔ Employee financial rollups
@@ -84,7 +84,7 @@
  * - newly created claims
  * - active investigations
  *
- * UNDER REVIEW
+ * In Review
  * - claim currently being evaluated
  * - pending investigation or approval
  *
@@ -206,7 +206,7 @@ private class ClaimLifecycleTest {
 
     /*
      * =========================================================
-     * OPEN -> UNDER REVIEW
+     * OPEN -> In Review
      * =========================================================
      */
 
@@ -219,7 +219,7 @@ private class ClaimLifecycleTest {
             LIMIT 1
         ];
 
-        claim.Status__c = 'Under Review';
+        claim.Status__c = 'In Review';
 
         Test.startTest();
         update claim;
@@ -232,15 +232,15 @@ private class ClaimLifecycleTest {
         ];
 
         System.assertEquals(
-            'Under Review',
+            'In Review',
             updatedClaim.Status__c,
-            'Claim should transition to Under Review'
+            'Claim should transition to In Review'
         );
     }
 
     /*
      * =========================================================
-     * UNDER REVIEW -> SETTLED
+     * In Review -> SETTLED
      * =========================================================
      */
 
@@ -352,7 +352,7 @@ private class ClaimLifecycleTest {
             LIMIT 1
         ];
 
-        claim.Status__c = 'Rejected';
+        claim.Status__c = 'Denied';
         claim.Settlement_Amount__c = 0;
         claim.Settlement_Date__c = null;
 
@@ -370,7 +370,7 @@ private class ClaimLifecycleTest {
         ];
 
         System.assertEquals(
-            'Rejected',
+            'Denied',
             updatedClaim.Status__c,
             'Claim should move to Rejected status'
         );
@@ -378,7 +378,7 @@ private class ClaimLifecycleTest {
         System.assertEquals(
             0,
             updatedClaim.Settlement_Amount__c,
-            'Rejected claims should not have settlement payouts'
+            'Denied claims should not have settlement payouts'
         );
 
         System.assertEquals(
