@@ -91,24 +91,26 @@ public with sharing class EmployeeClaimHelper extends TriggerHandler{
 
     private void recalculateEmployeeMetricsAndRisk(Set<Id> employeeIds){
     /* SCRUM-9 Automation Risk Scoring
-     * Complies claims metrics, map logic for evaluating risk and safely handle DML updates
-    */
-        List <Employee__c> employeesToUpdate = new List<Employee__c>();
+         * Complies claims metrics, map logic for evaluating risk and safely handle DML updates
+         */
+        List<Employee__c> employeesToUpdate = new List<Employee__c>();
+        
+        Map<Id, Employee__c> employeesWithClaimsMap = new Map<Id, Employee__c>();
+        for (Id empId : employeeIds) {
+            employeesWithClaimsMap.put(empId, new Employee__c(Id = empId));
+        }
 
-        //Query all related junction records and parent Claims
-        Map<Id, Employee__c> employeesWithClaimsMap = new Map<Id, Employee__c>([
-            SELECT Id, Name,(
-                SELECT Id, Claim__c, Claim__r.Settlement_Amount__c, Claim__r.Insurance_Provider_Name__c, Claim__r.Status__c
-                FROM Employee_Claims__r
-            )
-            FROM Employee__c
-            WHERE Id IN :employeeIds
+        List<Employee_Claim__c> relatedJunctions = [
+            SELECT Employee__c, Claim__r.Settlement_Amount__c, Claim__r.Insurance_Provider_Name__c, Claim__r.Status__c 
+            FROM Employee_Claim__c 
+            WHERE Employee__c IN :employeeIds
             WITH USER_MODE
-        ]);
+        ];
 
-        for (Id empId : employeeIds){
+        // Loop through employees to calculate metrics
+        for (Id empId : employeeIds) {
             Employee__c emp = employeesWithClaimsMap.get(empId);
-            if(emp == null){
+            if (emp == null) {
                 continue;
             }
 
@@ -116,44 +118,54 @@ public with sharing class EmployeeClaimHelper extends TriggerHandler{
             Decimal totalPayout = 0.0;
             Boolean isHighRisk = false;
 
-            //Track claims per Insurance Provider
-            Map<Id, Integer> claimsPerProviderMap = new Map<Id, Integer>();
-            for (Employee_Claim__c ec : emp.Employee_Claims__r){
-                totalClaimsCount ++;
+            // Track claims per Insurance Provider using a local map
+            Map<String, Integer> claimsPerProviderMap = new Map<String, Integer>();
+            
+            for (Employee_Claim__c ec : relatedJunctions) {
+                // Ensure we only process records belonging to THIS specific employee
+                if (ec.Employee__c != empId) {
+                    continue; 
+                }
 
-                if(ec.Claim__c != null){
+                totalClaimsCount++;
+
+                if (ec.Claim__r != null) {
                     Decimal payout = ec.Claim__r.Settlement_Amount__c != null ? ec.Claim__r.Settlement_Amount__c : 0.0;
-                    //Increment overall settled payouts
-                    if (ec.Claim__r.Status__c == 'Settled'){
-                        totalPayout += payout;
+                    totalPayout += payout;
+
+                    // Track provider counts
+                    String provider = ec.Claim__r.Insurance_Provider_Name__c;
+                    if (provider != null) {
+                        Integer count = claimsPerProviderMap.containsKey(provider) ? claimsPerProviderMap.get(provider) : 0;
+                        claimsPerProviderMap.put(provider, count + 1);
                     }
-                    //Group claims data by Insurance Provider using AccountId
-                    Id providerId = ec.Claim__r.Insurance_Provider_Name__c;
-                    if (providerId != null){
-                        Integer currentCount = claimsPerProviderMap.containsKey(providerId) ? claimsPerProviderMap.get(providerId) : 0;
-                        claimsPerProviderMap.put(providerId, currentCount + 1);
-                    }
-                    if (payout > 10000.0){
+                }
+            }
+
+            // 5. Evaluate high-risk thresholds
+            if (totalClaimsCount >= 3 || totalPayout > 100000) {
+                isHighRisk = true;
+            } else {
+                for (String provider : claimsPerProviderMap.keySet()) {
+                    if (claimsPerProviderMap.get(provider) >= 2) {
                         isHighRisk = true;
+                        break;
                     }
                 }
             }
-            //Evaluate whether High Risk if 3+ claims exist against any single Ins Provider
-            for (Id providerId : claimsPerProviderMap.keySet()){
-                if(claimsPerProviderMap.get(providerId) >3){
-                    isHighRisk = true;
-                    break;
-                }
-            }
-        //Map calculated values back onto the custom Employee fields
-        emp.Total_Claims__c = totalClaimsCount;
-        emp.Total_Payout__c = totalPayout;
-        emp.Risk_Level__c   = isHighRisk ? 'High Risk' : 'Standard';
-        employeesToUpdate.add(emp);
+
+            // Map calculated metrics onto the Employee record to be updated
+            Employee__c updatedEmp = new Employee__c(
+                Id = empId,
+                Total_Claims__c = totalClaimsCount,
+                Total_Payout__c = totalPayout,
+                Risk_Level__c = isHighRisk ? 'High Risk' : 'Low Risk'
+            );
+            employeesToUpdate.add(updatedEmp);
         }
-        //final check and commit
-        if(!employeesToUpdate.isEmpty()){
-            Database.update(employeesToUpdate,true);
+        
+        if (!employeesToUpdate.isEmpty()) {
+            Database.update(employeesToUpdate, true);
         }
     }
 }
