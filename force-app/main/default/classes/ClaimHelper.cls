@@ -57,4 +57,24 @@ public with sharing class ClaimHelper extends TriggerHandler{
             }
         }        
     }
+
+    private void executeAfterLogic() {
+        Set<Id> employeeIdsToRecalculate = new Set<Id>();
+        
+        // Just grab the Employee IDs impacted by the updated claims
+        for (Employee_Claim__c ec : [
+            SELECT Employee__c 
+            FROM Employee_Claim__c 
+            WHERE Claim__c IN :newRecords 
+            WITH SYSTEM_MODE]){
+
+            if (ec.Employee__c != null) {
+                employeeIdsToRecalculate.add(ec.Employee__c);
+            }
+        }
+
+        if (!employeeIdsToRecalculate.isEmpty()) {
+            new EmployeeClaimHelper().recalculateEmployeeMetricsAndRisk(employeeIdsToRecalculate);
+        }
+    }
 }
